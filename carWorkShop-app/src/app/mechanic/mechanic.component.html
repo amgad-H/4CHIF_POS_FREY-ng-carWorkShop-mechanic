@@ -1,0 +1,25 @@
+<table>
+    <tbody>
+        <tr>
+            <td><h4>{{lastName}}, {{firstName}} (hired {{hireDate.toLocaleDateString()}}, {{getYearsSinceHired()}} years)</h4></td>
+            <td>
+                <button *ngIf="editMode && !doEdit" (click)="doEdit=true" class="btn btn-primary">Edit</button>
+                <button *ngIf="doEdit" (click)="doEdit = false" class="btn btn-primary">Done</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="doEdit">
+    <table>
+        <tbody>
+          <tr>
+            <td><input type="text" [(ngModel)]="lastName" name="lastName"></td>
+            <td><input type="text" [(ngModel)]="firstName" name="firstName"></td>
+            <td>
+                <input type="date" [valueAsDate]="hireDate" (input)="hireDate=parseDate($event)" />
+            </td>
+           </tr>
+        </tbody>
+        </table>
+</div>
