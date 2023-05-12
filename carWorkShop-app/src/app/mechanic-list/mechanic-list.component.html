@@ -1,0 +1,9 @@
+<div><button (click)="isNewMech = true" class="btn btn-primary" style="background-color: green; border-color: green">Add Mec</button></div>
+<div *ngIf="isNewMech"><app-mechanic [isNew] = true [editMode] = false></app-mechanic></div>
+
+<div *ngFor="let i = index;let m of mechanics">
+  <table>
+    <td><button (click)="deleteMechanic(i)" class="btn btn-primary" style="background-color: darkred; border-color: darkred">Delete</button></td>
+    <td><app-mechanic [mechanic] = "m"></app-mechanic></td>
+  </table>
+</div>

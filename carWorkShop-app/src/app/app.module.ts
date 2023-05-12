@@ -4,11 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MechanicComponent } from './mechanic/mechanic.component';
+import { OrderComponent } from './order/order.component';
+import { MechanicListComponent } from './mechanic-list/mechanic-list.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MechanicComponent
+    MechanicComponent,
+    OrderComponent,
+    MechanicListComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule, 
